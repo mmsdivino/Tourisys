@@ -11,9 +11,6 @@ heritage = OverlayData("[heritage]", salvador.__str__(), "heritage")
 historic = OverlayData("[historic][historic!~%27memorial|monument|statue|castle%27]", salvador.__str__(), "historic")
 information = OverlayData("[tourism=information]", salvador.__str__(), "information")
 monument_memorial = OverlayData("[historic~%27^monument$|^memorial$%27]", salvador.__str__(), "monument_memorial")
-monumental_tree = OverlayData("[natural=tree][monument=yes]", salvador.__str__(), "monumental_tree")
 museum = OverlayData("[tourism=museum]", salvador.__str__(), "museum")
 viewpoint = OverlayData("[tourism=viewpoint]", salvador.__str__(), "viewpoint")
 zoo = OverlayData("[tourism=zoo]", salvador.__str__(), "zoo")
-
-
