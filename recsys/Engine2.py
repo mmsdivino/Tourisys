@@ -1,61 +1,97 @@
 import graphlab as gl
+from sklearn.metrics import mean_absolute_error
+from geopy.distance import vincenty
+
+def calcArea(location, origin, destination):
+    # Distance between origin e destination
+    dOriginDest = vincenty(origin, destination).meters
+    # Distance between origin and location
+    dOriginActual = vincenty(origin, location).meters
+    # Distance between destination and location
+    dDestActual = vincenty(destination, location).meters
+
+    # Calc Area
+    ## calculate the semi-perimeter
+    s = (dOriginDest + dOriginActual + dDestActual) / 2;
+
+    ## calculate the area
+    area = (s * (s - dOriginDest) * (s - dOriginActual) * (s - dDestActual)) ** 0.5
+
+    return area
 
 ratings = gl.SFrame.read_csv('../data/ratings_0.txt', delimiter=' ', header=False)
 items = gl.SFrame.read_csv('../data/poi_data_0.txt', delimiter=';', header=False)
 
 ## Rename columns
-ratings = ratings.rename({'X1': 'item_id', 'X2': 'user_id', 'X3': 'score', 'X4': 'timestamp'})
-items = items.rename({'X1': 'item_id', 'X2': 'name', 'X3': 'type'})
+ratings = ratings.rename({'X1': 'item_id', 'X2': 'user_id', 'X3': 'rating', 'X4': 'timestamp'})
+items = items.rename({'X1': 'item_id', 'X2': 'name', 'X3': 'type', 'X4': 'location'})
 
-# print(ratings)
-# print(items)
-# print(items.show())
-## How many unique users do we have?
+# How many unique users do we have?
 # print(ratings['user_id'].unique().size())
-
-explicit = ratings[['item_id', 'user_id', 'score']]
-# print(explicit)
-
-implicit = explicit[explicit['score'] >= 4.0][['item_id', 'user_id']]
-# print (implicit)
-m = gl.recommender.create(implicit, 'user_id', 'item_id')
+# print(ratings['item_id'].unique().size())
+# print(items['type'].unique().size())
 
 ## Getting similar items Elevador Lacerda
-# print (items[items['item_id'] == 'ChIJbwjQpe8EFgcReGfBceMwWXI'])
-# print (m.get_similar_items(['ChIJbwjQpe8EFgcReGfBceMwWXI'], k=5))
-# print (m.get_similar_items(['ChIJbwjQpe8EFgcReGfBceMwWXI']).join(items, on={'similar': 'item_id'}).sort('rank'))
+# print (items[items['item_id'] == 59224731])
+# print (m.get_similar_items([59224731], k=5))
+# print (m.get_similar_items([59224731]).join(items, on={'similar': 'item_id'}).sort('rank'))
 
 ## Build a model for predicting predicted score
-m2 = gl.recommender.create(explicit, 'user_id', 'item_id', target='score')
+# m2 = gl.recommender.create(explicit, 'user_id', 'item_id', target='score')
 
 ## Making batch recommendations
-recs = m.recommend()
+# recs = m.recommend()
 # print(recs)
 # print(ratings[ratings['user_id'] == '109061523463683935873'].join(items, on='item_id'))
 # print(m.recommend(users=['109061523463683935873'], k=20).join(items, on='item_id').sort('rank'))
 
+# m = gl.recommender.item_content_recommender.create(item_data=items, item_id='item_id', observation_data=ratings, user_id='user_id', target='rating')
+# recs = m.recommend()
+# print(recs)
+
 ## Recommendations for new users
-recent_data = gl.SFrame()
-recent_data['item_id'] = ['ChIJbwjQpe8EFgcReGfBceMwWXI'] # Elevador Lacerda
-recent_data['user_id'] = 99999
-# print(m.recommend(users=[99999], new_observation_data=recent_data).join(items, on='item_id').sort('rank'))
+
+# print(poiRec[poiRec['user_id'] == 99999].join(items, on='item_id').sort('rank'))
+# print(poiRec)
+#
+# recent_data['origin'] = [(-12.9691653, -38.5120631)]
+# recent_data['destination'] = [(-12.9731013, -38.5099296)]
+#
+# itemsArray = []
+# distanceArray = []
+# for item in poiRec:
+#     itemsArray.append(item['item_id'])
+#     distanceArray.append(calcArea(item['location'], recent_data['origin'], recent_data['destination']))
+#
+# itemsSa = gl.SArray(itemsArray)
+# distanceSa = gl.SArray(distanceArray)
+#
+# itemsDistance = gl.SFrame();
+# itemsDistance.add_column(itemsSa, name='item_id')
+# itemsDistance.add_column(distanceSa, name='distance')
+#
+# poiRecDist = poiRec.join(itemsDistance, on='item_id').sort('distance')
+#
+# print(poiRecDist)
 
 ## Split the data into a training set and a test set
 ## This allows us to evaluate generalization ability.
-# train, valid = gl.recommender.util.random_split_by_user(implicit)
+# train, test = gl.recommender.util.random_split_by_user(ratings)
+# m = gl.recommender.item_content_recommender.create(item_data=items, item_id='item_id', observation_data=train, user_id='user_id', target='rating')
+# eval_precision_recall = m.evaluate_precision_recall(test)
+# print(eval_precision_recall)
 
-# Train models
-# Collaborative filtering approach that uses the Jaccard similarity of two users' item lists
-# m0 = gl.item_similarity_recommender.create(train)
+# eval_rmse_test = m.evaluate_rmse(test, target='rating')
+# print (eval_rmse_test)
 #
-# # Collaborative filtering approach that learns latent factors for each user and each item
-# m1 = gl.ranking_factorization_recommender.create(train, max_iterations=10)
-#
-# # Collaborative filtering approach that learns latent factors for users, items, and side data
-# m2 = gl.ranking_factorization_recommender.create(train, item_data=items[['item_id', 'name']], max_iterations=10)
-# m3 = gl.ranking_factorization_recommender.create(train, item_data=items[['item_id', 'name', 'type']], max_iterations=10)
-#
-# # Evaluation
-# # Create a precision/recall plot to compare the recommendation quality of the above models given our heldout data.
-# model_comparison = gl.compare(valid, [m0, m1, m2, m3], user_sample=.3)
-# gl.show_comparison(model_comparison, [m0, m1, m2, m3])
+# eval_rmse_train = m.evaluate_rmse(train, target='rating')
+# print (eval_rmse_train)
+
+# eval= m.evaluate(test)
+# print (eval)
+
+folds = gl.cross_validation.KFold(ratings, 10)
+params = dict([('target', 'rating')])
+job = gl.cross_validation.cross_val_score(folds, gl.ranking_factorization_recommender.create, params)
+print(job)
+print(job.get_results())

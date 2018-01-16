@@ -1,0 +1,56 @@
+ChIJITj-in8EFgcRsg17c6Co4cg;Oxum Casa de Arte;arts_centre
+ChIJmfXyj4gEFgcROGKMO6faGys;Goethe-Institut;arts_centre
+ChIJz-yP2e0EFgcRVOm5ulakLrg;Caixa Economica Federal;arts_centre
+ChIJ2QQJsZMEFgcR4UwUmXFKFio;Galeria Pierre Verger;arts_centre
+ChIJZ234IGcDFgcR7RghvCuVtVo;Ebateca Escola de Ballet - Ondina;arts_centre
+ChIJffYr31QbFgcRixq77MwiSZI;Hora da Crianca;arts_centre
+ChIJITj-in8EFgcRsg17c6Co4cg;Oxum Casa de Arte;attraction
+ChIJG2Y4SM7iFQcRb10JnRqiL-Y;Fonte da Bica;attraction
+ChIJUUCpfugEFgcRpVq2mIQY6-k;Olodum Creative School;attraction
+ChIJbwjQpe8EFgcReGfBceMwWXI;Elevador Lacerda;attraction
+ChIJbwjQpe8EFgcR3fEYMMHfYLc;Mercado Modelo;attraction
+ChIJN0IWtOcEFgcRweXTPC4CFsk;Solar Ferrao;attraction
+ChIJK-eKwI4EFgcRWPB75HfkdRM;Fort Sao Pedro;castle
+ChIJf_J75YUEFgcRDYMfmwGzbOA;Galeria Canizares UFBA;gallery
+ChIJbwjQpe8EFgcReGfBceMwWXI;Elevador Lacerda;heritage
+ChIJc304ZIQDFgcRTnwd_5BC3IA;Santa Maria Fort;historic
+ChIJRScnsoYDFgcR2r9WehC7LWI;Sao Diogo Fort;historic
+ChIJww-uRoAEFgcR4BXE1AAXWLk;Palace of Arts;historic
+ChIJpR4Czn8EFgcR_u179DpK6J0;Alianca Francesa;historic
+ChIJn_jNg5sDFgcRBnd_An0OVCE;Bahia Nautico Museum;historic
+ChIJbwjQpe8EFgcReGfBceMwWXI;Elevador Lacerda;historic
+ChIJmYeiy-AEFgcRXxf3oVxPgJU;Pestana Convento do Carmo Bahia;historic
+ChIJRT208OcEFgcR0q9WDmKDC0U;Lar Franciscano e Capela Santa Isabel;historic
+ChIJqTbIfu8EFgcRbgPr4p2_PJY;Saltur;information
+ChIJidIO85wDFgcRqQPPZZRBZBE;Informacoes Turisticas - Barra;information
+ChIJuZgjGuYEFgcRhUioPBGTLYc;Catedral Basilica de Sao Salvador;monument_memorial
+ChIJU-a1No8EFgcRFUjW-RyGIvU;Monumento do Dois de Julho (Caboclo);monument_memorial
+ChIJJXkvN6kEFgcRN2Y4b2Vq7pY;Extra Supermercado;monument_memorial
+ChIJ2Ro9VO8EFgcRfbr467suPC4;Fallen Cross Monument;monument_memorial
+ChIJuVpn6Y4EFgcRlN1mJ5LyDlU;Monumento Homenagem aos Herois de Canudo;monument_memorial
+ChIJ3b97_yAFFgcRA_IkoEUeUCs;Strong Capoeira;monument_memorial
+ChIJY9j5WScFFgcRLeJmBFUJhJ4;Strong Barbalho;monument_memorial
+ChIJw5CTdR0HFgcRU_7eJ6BCGTs;Templo Da Sociedade Brasileira De Eubiose;monument_memorial
+ChIJgX6lk4wEFgcRL4NqQeWc9a4;Solar Unhao - MAM;museum
+ChIJ2a5xRIcEFgcRXXonVsvCtuw;Bahia's Art Museum;museum
+ChIJc304ZIQDFgcRTnwd_5BC3IA;Santa Maria Fort;museum
+ChIJ_T81qecEFgcR_fdblyHxqc0;City Museum;museum
+ChIJ49RcPeYEFgcR_f2lKto0rxw;Museu de Arqueologia e Etnologia da UFBA;museum
+ChIJi_cUPeYEFgcRZI0Jym97Dss;Afro-Brazilian Museum UFBA;museum
+ChIJRScnsoYDFgcR2r9WehC7LWI;Sao Diogo Fort;museum
+ChIJww-uRoAEFgcR4BXE1AAXWLk;Palace of Arts;museum
+ChIJfb70GucEFgcRL4teeS8IibM;Foundation Casa de Jorge Amado;museum
+ChIJ1ZC9qecEFgcREy-GbWjrOJ0;Museu da Gastronomia Baiana;museum
+ChIJDSYipoAEFgcRTnobAtNV3S0;Carlos Costa Pinto Museum;museum
+ChIJaRUuTu8EFgcR1H7toWw9urw;Museum of Mercy;museum
+ChIJud0W0lUDFgcRTJZmAr3SngU;Memorial House of the Red River;museum
+ChIJPzGWfugEFgcR6oE1e7egUW0;Museum of Brazilian Music;museum
+ChIJVafIDIcEFgcRWFLodnxnuJA;Bahia Geological Museum;museum
+ChIJ_SLVaOUEFgcR7-JW1T_krk0;Sao Marcelo Fort;museum
+ChIJn_jNg5sDFgcRBnd_An0OVCE;Bahia Nautico Museum;museum
+ChIJTy-14ZEEFgcRv7_gwV5TOEM;Instituto Feminino da Bahia;museum
+ChIJgW7td-0EFgcRbadpjAVIBeM;Museu de Arte Sacra;museum
+ChIJud0W0lUDFgcRTJZmAr3SngU;Memorial House of the Red River;museum
+ChIJY0p8BXcDFgcRpIAs4AGeXLw;Christ the hill;viewpoint
+ChIJE19TeXwFFgcRqTKTlemByvE;Our Lady of Mount Serrat;viewpoint
+ChIJdyexw14DFgcRiS9JVyMLcXo;Salvador Zoo and Botanical Park;zoo

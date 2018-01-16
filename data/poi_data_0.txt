@@ -1,56 +1,58 @@
-ChIJITj-in8EFgcRsg17c6Co4cg;Oxum Casa de Arte;arts_centre
-ChIJmfXyj4gEFgcROGKMO6faGys;Goethe-Institut;arts_centre
-ChIJz-yP2e0EFgcRVOm5ulakLrg;Caixa Economica Federal;arts_centre
-ChIJ2QQJsZMEFgcR4UwUmXFKFio;Galeria Pierre Verger;arts_centre
-ChIJZ234IGcDFgcR7RghvCuVtVo;Ebateca Escola de Ballet - Ondina;arts_centre
-ChIJffYr31QbFgcRixq77MwiSZI;Hora da Crianca;arts_centre
-ChIJITj-in8EFgcRsg17c6Co4cg;Oxum Casa de Arte;attraction
-ChIJG2Y4SM7iFQcRb10JnRqiL-Y;Fonte da Bica;attraction
-ChIJUUCpfugEFgcRpVq2mIQY6-k;Olodum Creative School;attraction
-ChIJbwjQpe8EFgcReGfBceMwWXI;Elevador Lacerda;attraction
-ChIJbwjQpe8EFgcR3fEYMMHfYLc;Mercado Modelo;attraction
-ChIJN0IWtOcEFgcRweXTPC4CFsk;Solar Ferrao;attraction
-ChIJK-eKwI4EFgcRWPB75HfkdRM;Fort Sao Pedro;castle
-ChIJf_J75YUEFgcRDYMfmwGzbOA;Galeria Canizares UFBA;gallery
-ChIJbwjQpe8EFgcReGfBceMwWXI;Elevador Lacerda;heritage
-ChIJc304ZIQDFgcRTnwd_5BC3IA;Santa Maria Fort;historic
-ChIJRScnsoYDFgcR2r9WehC7LWI;Sao Diogo Fort;historic
-ChIJww-uRoAEFgcR4BXE1AAXWLk;Palace of Arts;historic
-ChIJpR4Czn8EFgcR_u179DpK6J0;Alianca Francesa;historic
-ChIJn_jNg5sDFgcRBnd_An0OVCE;Bahia Nautico Museum;historic
-ChIJbwjQpe8EFgcReGfBceMwWXI;Elevador Lacerda;historic
-ChIJmYeiy-AEFgcRXxf3oVxPgJU;Pestana Convento do Carmo Bahia;historic
-ChIJRT208OcEFgcR0q9WDmKDC0U;Lar Franciscano e Capela Santa Isabel;historic
-ChIJqTbIfu8EFgcRbgPr4p2_PJY;Saltur;information
-ChIJidIO85wDFgcRqQPPZZRBZBE;Informacoes Turisticas - Barra;information
-ChIJuZgjGuYEFgcRhUioPBGTLYc;Catedral Basilica de Sao Salvador;monument_memorial
-ChIJU-a1No8EFgcRFUjW-RyGIvU;Monumento do Dois de Julho (Caboclo);monument_memorial
-ChIJJXkvN6kEFgcRN2Y4b2Vq7pY;Extra Supermercado;monument_memorial
-ChIJ2Ro9VO8EFgcRfbr467suPC4;Fallen Cross Monument;monument_memorial
-ChIJuVpn6Y4EFgcRlN1mJ5LyDlU;Monumento Homenagem aos Herois de Canudo;monument_memorial
-ChIJ3b97_yAFFgcRA_IkoEUeUCs;Strong Capoeira;monument_memorial
-ChIJY9j5WScFFgcRLeJmBFUJhJ4;Strong Barbalho;monument_memorial
-ChIJw5CTdR0HFgcRU_7eJ6BCGTs;Templo Da Sociedade Brasileira De Eubiose;monument_memorial
-ChIJgX6lk4wEFgcRL4NqQeWc9a4;Solar Unhao - MAM;museum
-ChIJ2a5xRIcEFgcRXXonVsvCtuw;Bahia's Art Museum;museum
-ChIJc304ZIQDFgcRTnwd_5BC3IA;Santa Maria Fort;museum
-ChIJ_T81qecEFgcR_fdblyHxqc0;City Museum;museum
-ChIJ49RcPeYEFgcR_f2lKto0rxw;Museu de Arqueologia e Etnologia da UFBA;museum
-ChIJi_cUPeYEFgcRZI0Jym97Dss;Afro-Brazilian Museum UFBA;museum
-ChIJRScnsoYDFgcR2r9WehC7LWI;Sao Diogo Fort;museum
-ChIJww-uRoAEFgcR4BXE1AAXWLk;Palace of Arts;museum
-ChIJfb70GucEFgcRL4teeS8IibM;Foundation Casa de Jorge Amado;museum
-ChIJ1ZC9qecEFgcREy-GbWjrOJ0;Museu da Gastronomia Baiana;museum
-ChIJDSYipoAEFgcRTnobAtNV3S0;Carlos Costa Pinto Museum;museum
-ChIJaRUuTu8EFgcR1H7toWw9urw;Museum of Mercy;museum
-ChIJud0W0lUDFgcRTJZmAr3SngU;Memorial House of the Red River;museum
-ChIJPzGWfugEFgcR6oE1e7egUW0;Museum of Brazilian Music;museum
-ChIJVafIDIcEFgcRWFLodnxnuJA;Bahia Geological Museum;museum
-ChIJ_SLVaOUEFgcR7-JW1T_krk0;Sao Marcelo Fort;museum
-ChIJn_jNg5sDFgcRBnd_An0OVCE;Bahia Nautico Museum;museum
-ChIJTy-14ZEEFgcRv7_gwV5TOEM;Instituto Feminino da Bahia;museum
-ChIJgW7td-0EFgcRbadpjAVIBeM;Museu de Arte Sacra;museum
-ChIJud0W0lUDFgcRTJZmAr3SngU;Memorial House of the Red River;museum
-ChIJY0p8BXcDFgcRpIAs4AGeXLw;Christ the hill;viewpoint
-ChIJE19TeXwFFgcRqTKTlemByvE;Our Lady of Mount Serrat;viewpoint
-ChIJdyexw14DFgcRiS9JVyMLcXo;Salvador Zoo and Botanical Park;zoo
+904330915;Oxum Casa de Arte;[arts_centre];(-12.9995737, -38.5296316)
+904330915;Oxum Casa de Arte;[attraction];(-12.9995737, -38.5296316)
+2517399085;Goethe-Institut;[arts_centre];(-12.9896961, -38.5237461)
+2627312981;Espaço Caixa Cultural Salvador;[arts_centre];(-12.9796661, -38.5152206)
+2627418546;Galeria Pierre Verger;[arts_centre];(-12.9856154, -38.5132376)
+4013135970;Ebateca Escola de Ballet - Ondina;[arts_centre];(-13.0080558, -38.5085669)
+310359209;Hora da Criança;[arts_centre];(-13.0036567, -38.4840547)
+5329649749;Praia do Rio Vermelho;[artwork];(-13.0125789, -38.4920392)
+4671721850;Fonte da Bica;[attraction];(-12.8891112, -38.6830765)
+4832446778;Escola Criativa Olodum;[attraction];(-12.9740496, -38.5082073)
+59224731;Elevador Lacerda;[attraction];(-12.9742309, -38.5131794)
+59392558;Mercado Modelo;[attraction];(-12.9729297, -38.5139677)
+247777942;Solar Ferrão;[attraction];(-12.9724087, -38.5082415)
+2917546802;Forte de São Pedro;[castle];(-12.9874975, -38.520614)
+4489601833;Galeria Cañizares UFBA;[gallery];(-12.9911514, -38.5212313)
+529060747;Elevador Lacerda;[heritage];(-12.973757, -38.5125714)
+529060747;Elevador Lacerda;[historic];(-12.973757, -38.5125714)
+904254510;Forte Santa Maria;[historic];(-13.0045113, -38.5339192)
+904254510;Forte Santa Maria;[museum];(-13.0045113, -38.5339192)
+1014938188;Forte de São Diogo;[historic];(-13.0017986, -38.5326934)
+1446213393;Palacete das Artes;[historic];(-12.9978833, -38.5255101)
+1446213393;Palacete das Artes;[museum];(-12.9978833, -38.5255101)
+1739618198;Aliança Francesa;[historic];(-12.9968008, -38.5278412)
+87291138;Museu Naútico da Bahia;[historic];(-13.0103339, -38.5329129)
+87291138;Museu Naútico da Bahia;[museum];(-13.0103339, -38.5329129)
+7628527;Pestana Convento do Carmo Bahia;[historic];(-12.9685803, -38.5071935)
+7637177;Lar Franciscano e Capela Santa Isabel;[historic];(-12.9734767, -38.5068413)
+736956753;Saltur;[information];(-12.973263, -38.5136285)
+4620624732;Informações Turísticas - Barra;[information];(-13.009825, -38.5309085)
+991899628;Terreiro De Jesus;[monument_memorial];(-12.9731013, -38.5099296)
+1458810408;Monumento do Dois de Julho (Caboclo);[monument_memorial];(-12.9890724, -38.5214266)
+1489487295;Monumento Clériston Andrade;[monument_memorial];(-13.0010363, -38.5051364)
+4379475278;Busto do Marquês de Tamandaré;[monument_memorial];(-13.004633, -38.5333522)
+5063175822;Monumento da Cruz Caída;[monument_memorial];(-12.9732449, -38.5117795)
+5111051916;Monumento Homenagem aos Herois de Canudo;[monument_memorial];(-12.9874945, -38.5202454)
+366301422;Forte da Capoeira;[monument_memorial];(-12.9624768, -38.5031886)
+366301428;Forte do Barbalho;[monument_memorial];(-12.9649175, -38.5001115)
+420314882;Templo Da Sociedade Brasileira De Eubiose;[monument_memorial];(-12.9576645, -38.6120478)
+340233810;Solar do Unhão - MAM;[museum];(-12.9822757, -38.5202865)
+340233813;Museu de Arte da Bahia;[museum];(-12.9936089, -38.525915)
+991899630;Museu da Cidade;[museum];(-12.9718007, -38.508382)
+991899664;Museu de Arqueologia e Etnologia da UFBA;[museum];(-12.9726228, -38.5099445)
+991899666;Museu Afro-Brasileiro da UFBA;[museum];(-12.972785, -38.509838)
+1014938186;Forte de São Diogo;[museum];(-13.001945, -38.5326505)
+1486422687;Museu Abelardo Rodrigues;[museum];(-12.9724884, -38.508312)
+1486422689;Fundação Casa de Jorge Amado;[museum];(-12.9717126, -38.5085133)
+1486422690;Museu da Gastronomia Baiana;[museum];(-12.9715244, -38.5081752)
+2546347647;Museu Carlos Costa Pinto;[museum];(-12.9947517, -38.5272767)
+4364718106;Museu da Misericórdia;[museum];(-12.9737659, -38.5118682)
+4832439737;Museu da Música Brasileira;[museum];(-12.9739586, -38.5083454)
+5128689863;Museu Geológico da Bahia;[museum];(-12.9925749, -38.5255028)
+29415493;Forte São Marcelo;[museum];(-12.9699896, -38.5177846)
+444446827;Fundação Instituto Feminino da Bahia;[museum];(-12.9867115, -38.5189464)
+463185163;Museu de Arte Sacra;[museum];(-12.9790093, -38.5163473)
+474260844;Casa do Rio Vermelho;[museum];(-13.007764, -38.4897404)
+565771434;Morro do Cristo;[viewpoint];(-13.0108191, -38.523881)
+1776511037;Nossa Senhora do Monte Serrat;[viewpoint];(-12.9285838, -38.5195141)
+30967921;Parque Zoobotânico de Salvador;[zoo];(-13.0063696, -38.5056146)
