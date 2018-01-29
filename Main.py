@@ -1,35 +1,45 @@
-from geolocation.City import *
+from geolocation.Nominatim import *
 from poi.OverlayData import *
+from poi.GMapsData import *
+from recsys.RecSys import *
 
-salvador = City("http://nominatim.openstreetmap.org/search/brazil/bahia/salvador?format=json")
+# nominatim = Nominatim();
+# nominatim.query("Salvador,Bahia,Brazil")
+# areaIdSalvador = nominatim.areaId()
+#
+# overlayData = OverlayData()
+# overlayData.poiData(areaIdSalvador)
+#
+# gMapsData = GMapsData()
+# gMapsData.data(overlayData.poiList)
+#
+# gMapsData.json()
 
-processedElements = []
+recSys = RecSys(user_data='data/user.json', item_data='data/poi.json', rating_data='data/review.json')
+## Evaluates
+# recSys.itemSimilarity(eval=True)
+# recSys.itemSimilarity(similarityType='cosine', eval=True)
+# recSys.itemSimilarity(similarityType='pearson', eval=True)
 
-artsCentre = OverlayData("[amenity=arts_centre]", salvador.__str__(), "arts_centre")
-artsCentre.getPOIData(processedElements)
-artwork = OverlayData("[tourism=artwork][artwork_type!~%27statue%27]", salvador.__str__(), "artwork")
-artwork.getPOIData(processedElements)
-attraction = OverlayData("[tourism=attraction]", salvador.__str__(), "attraction")
-attraction.getPOIData(processedElements)
-castle = OverlayData("[historic=castle]", salvador.__str__(), "castle")
-castle.getPOIData(processedElements)
-gallery = OverlayData("[tourism=gallery]", salvador.__str__(), "gallery")
-gallery.getPOIData(processedElements)
-heritage = OverlayData("[heritage]", salvador.__str__(), "heritage")
-heritage.getPOIData(processedElements)
-historic = OverlayData("[historic][historic!~%27memorial|monument|statue|castle%27]", salvador.__str__(), "historic")
-historic.getPOIData(processedElements)
-information = OverlayData("[tourism=information]", salvador.__str__(), "information")
-information.getPOIData(processedElements)
-monument_memorial = OverlayData("[historic~%27^monument$|^memorial$%27]", salvador.__str__(), "monument_memorial")
-monument_memorial.getPOIData(processedElements)
-museum = OverlayData("[tourism=museum]", salvador.__str__(), "museum")
-museum.getPOIData(processedElements)
-viewpoint = OverlayData("[tourism=viewpoint]", salvador.__str__(), "viewpoint")
-viewpoint.getPOIData(processedElements)
-zoo = OverlayData("[tourism=zoo]", salvador.__str__(), "zoo")
-zoo.getPOIData(processedElements)
+# recSys.itemContent(attributes=['item_id', 'category'], splitAttribute='category', eval=True)
+# recSys.itemContent(attributes=['item_id', 'category'], eval=True)
+# recSys.itemContent(attributes=['item_id', 'latitude', 'longitude'], eval=True)
+# recSys.itemContent(attributes=['item_id', 'category', 'latitude', 'longitude'], splitAttribute='category', eval=True)
+# recSys.itemContent(attributes=['item_id', 'category', 'latitude', 'longitude'], eval=True)
+# recSys.itemContent(attributes=['item_id', 'name'], eval=True)
+# recSys.itemContent(attributes=['item_id', 'name', 'category'], splitAttribute='category', eval=True)
+# recSys.itemContent(attributes=['item_id', 'name', 'category'], eval=True)
+# recSys.itemContent(splitAttribute='category', eval=True)
+# recSys.itemContent(eval=True)
 
-zoo.getGMapsData(processedElements)
+## Recommends for new users
+recent_data = gl.SFrame();
+recent_data['user_id'] = ['99999']
+recent_data['item_id'] = [59392558]
+recent_data['rating'] = [0.8]
+# recSys.itemSimilarity(similarityType='pearson', newUsers=[99999], newObservationData=recent_data)
+recSys.itemContent(newUsers=[99999], newObservationData=recent_data)
 
-# print(processedElements)
+## Get similar items
+# recSys.itemSimilarity(similarityType='pearson', similarItem=[59224731])
+# recSys.itemContent(newUsers=[99999], similarItem=[59224731])

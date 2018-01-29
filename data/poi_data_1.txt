@@ -1,1 +1,0 @@
-{'type': 'zoo', 'location': (-13.0063696, -38.5056146), 'name': 'Parque Zoobot\xc3\xa2nico Get\xc3\xbalio Vargas'}

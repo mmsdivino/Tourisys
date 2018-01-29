@@ -1,77 +1,77 @@
-# encoding: utf-8
-
-import urllib, json, googlemaps, urlparse
-import sys
-
-reload(sys)
-sys.setdefaultencoding('latin-1')
+import overpy
 
 class OverlayData:
-    domain = 'http://overpass-api.de/api/interpreter/?data=[out:json];'
-    sufix = ';(._;%3E;);out%20center;&bbox='
-    gMapsUrl = 'https://maps.googleapis.com/maps/api/place/textsearch/json'
-    key = 'AIzaSyA0Yst-qoirbQMooKig-qHPRTA2SCMiuFc'
+    _categoryLink = [
+        {'selector': '["amenity"="arts_centre"]', 'type': 'arts_centre'},
+        {'selector': '["tourism"="artwork"][artwork_type!~"statue"]', 'type': 'artwork'},
+        {'selector': '["tourism"="attraction"]', 'type': 'attraction'},
+        {'selector': '["leisure"="casino"]', 'type': 'casino'},
+        {'selector': '["historic"="castle"]', 'type': 'castle'},
+        {'selector': '["tourism"="gallery"]', 'type': 'gallery'},
+        {'selector': '["heritage"]', 'type': 'heritage'},
+        {'selector': '["historic"][historic!~"memorial|monument|statue|castle"]', 'type': 'historic'},
+        {'selector': '["tourism"="information"]', 'type': 'information'},
+        {'selector': '["historic"~"^monument$|^memorial$"]', 'type': 'monument_memorial'},
+        {'selector': '["natural"="tree"]["monument"="yes"]', 'type': 'monumental_tree'},
+        {'selector': '["tourism"="museum"]', 'type': 'museum'},
+        {'selector': '["tourism"="picnic_site"]', 'type': 'picnic'},
+        {'selector': '["leisure"="picnic_table"]', 'type': 'picnic'},
+        {'selector': '["historic"="statue"]', 'type': 'statue'},
+        {'selector': '["landmark"="statue"]', 'type': 'statue'},
+        {'selector': '["tourism"="artwork"]["artwork_type"="statue"]', 'type': 'statue'},
+        {'selector': '["tourism"="theme_park"]', 'type': 'theme_park'},
+        {'selector': '["tourism"="viewpoint"]', 'type': 'viewpoint'},
+        {'selector': '["landuse"="vineyard"]', 'type': 'vineyard'},
+        {'selector': '["man_made"="windmill"]', 'type': 'windmill'},
+        {'selector': '["man_made"="watermill"]', 'type': 'watermill'},
+        {'selector': '["tourism"="zoo"]', 'type': 'zoo'},
+    ]
 
-    def __init__(self, parameter, city, type):
-        self.parameter = parameter
-        self.city = city
-        self.type = type
-        self.url = \
-            self.domain + \
-            '(node' + self.parameter + \
-            "(bbox);way" + self.parameter + \
-            "(bbox);rel" + self.parameter + \
-            "(bbox))" + self.sufix + self.city
+    def __init__(self, timeout = 25):
+        self._timeout = timeout
+        self.poiList = []
 
-    def getPOIData(self, listPoi):
-        response = urllib.urlopen(self.url)
-        data = json.loads(response.read(), encoding='latin-1')
-        elements = data['elements']
-        for element in elements:
-            if 'tags' in element and 'name' in element['tags']:
-                if not any(d['id'] == element['id'] for d in listPoi):
-                    poi = {}
-                    if element['type'] == 'node':
-                        poi['location'] = (element['lat'], element['lon'])
-                    else:
-                        poi['location'] = (element['center']['lat'], element['center']['lon'])
-                    poi['id'] = element['id']
-                    poi['name'] = element['tags']['name'].encode('latin-1')
-                    poi['type'] = [self.type]
-                    listPoi.append(poi)
+    def _saveInfo(self, elements, category):
+        for element in elements or []:
+            if not any(d['id'] == element.id for d in self.poiList):
+                poi = {}
+                if element._type_value == 'node':
+                    poi['latitude'] = float(element.lat)
+                    poi['longitude'] = float(element.lon)
                 else:
-                    for d in listPoi:
-                        if d['id'] == element['id']:
-                            d['type'].append(self.type)
+                    poi['latitude'] = float(element.center_lat)
+                    poi['longitude'] = float(element.center_lon)
+                poi['id'] = element.id
+                poi['name'] = element.tags['name']
+                poi['type'] = [category]
+                self.poiList.append(poi)
+            else:
+                for d in self.poiList:
+                    if d['id'] == element.id:
+                        d['type'].append(category)
 
+    def poiData(self, areaId):
+        api = overpy.Overpass()
+        for category in self._categoryLink:
+            elements = []
+            query = '[timeout:{}][out:json];' \
+                        'area({})->.searchArea;' \
+                        'node(area.searchArea);' \
+                        'node._["name"]{};(._;>;);out center;'.format(self._timeout, areaId, category['selector']);
+            result = api.query(query)
+            elements.extend(result.nodes)
 
-    def getGMapsData(self, listPoi):
-        gmaps = googlemaps.Client(self.key)
-        for poi in listPoi:
-            placesResult = gmaps.places_nearby(poi['location'], name=poi['name'], rank_by='distance', language='pt-BR')
-            if len(placesResult['results']) > 0:
-                if 'place_id' in placesResult['results'][0]:
-                    placeId = placesResult['results'][0]['place_id']
-                    placeDetail = gmaps.place(placeId)
-                    if 'reviews' in placeDetail['result']:
-                        with open("data/poi_data_0.txt", "a") as poiInfo:
-                            poiInfo.write("%s;%s;%s;%s\n" % (poi['id'], placesResult['results'][0]['name'], poi['type'], poi['location']))
-                        reviews = placeDetail['result']['reviews'];
-                        reviewsList = []
-                        for review in reviews:
-                            if 'author_url' in review:
-                                r = []
-                                r.append(poi['id'])
-                                pathUrl = urlparse.urlparse(review['author_url']).path
-                                r.append(pathUrl.split("/")[3])
-                                r.append(review['rating'])
-                                r.append(review['time'])
-                                reviewsList.append(r)
-                        with open("data/ratings_0.txt", "a") as ratings:
-                            for item in reviewsList:
-                                ratings.write("%s\n" % item)
+            query = '[timeout:{}][out:json];' \
+                    'area({})->.searchArea;' \
+                    'way(area.searchArea);' \
+                    'way._["name"]{};(._;>;);out center;'.format(self._timeout, areaId, category['selector']);
+            result = api.query(query)
+            elements.extend(result.ways)
 
-
-
-
-
+            query = '[timeout:{}][out:json];' \
+                    'area({})->.searchArea;' \
+                    'rel(area.searchArea);' \
+                    'rel._["name"]{};(._;>;);out center;'.format(self._timeout, areaId, category['selector']);
+            result = api.query(query)
+            elements.extend(result.relations)
+            self._saveInfo(elements, category['type'])

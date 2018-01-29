@@ -1,1 +1,1 @@
-from . import City
+from . import Nominatim
